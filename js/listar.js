@@ -1,9 +1,9 @@
 function appendTabelaListar(value, index) {
 	var html =
 	'<tr data-id='+value.id+'>'+
-		'<th scope="row">'+value.id+'</th>'+
-		'<td>'+value.nome+'</td>'+
-		'<td>'+value.email+'</td>'+
+		'<td id="id'+value.id+'">'+value.id+'</td>'+
+		'<td id="nome'+value.id+'">'+value.nome+'</td>'+
+		'<td id="email'+value.id+'">'+value.email+'</td>'+
 		'<td>'+
 			'<button class="btn btn-info editar" data-btn="'+value.id+'"><i class="fa fa-pencil"></i></button>'+
 			'<button class="btn btn-danger excluir" data-btn="'+value.id+'"><i class="fa fa-trash"></i></button>'+
@@ -21,6 +21,8 @@ $(document).ready(function() {
 	.done(function(data) {
 		if (data.result) {
 			data.dados.forEach(appendTabelaListar);
+			var rows = $("#listar").find("tr");
+			$('#num_linhas').html(rows.length);
 		}else{
 			alert('Erro ao realizar listagem');
 		}

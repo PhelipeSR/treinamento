@@ -10,6 +10,8 @@ $(document).ready(function() {
 		.done(function(data) {
 			if (data.result) {
 				$('[data-id="'+id+'"]').remove();
+				var rows = $("#listar").find("tr");
+				$('#num_linhas').html(rows.length);
 			}else{
 				alert('Erro ao realizar exclusão');
 			}
