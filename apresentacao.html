@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Apresentação</title>
+</head>
+<body>
+
+	<div style="height: 200px; width: 200px; background-color: red; text-align: center;" id="mouseover"></div>
+
+	<script type="text/javascript">
+		// *************************
+		// Tipagem
+		// *************************
+		var x;
+		x = "Wubba Lubba Dub Dub"
+		console.log(typeof x);
+		x = 10;
+		console.log(typeof x);
+
+		// *************************
+		// Objetos
+		// *************************
+
+		var carro = {
+			marca: "Ford",
+			modelo: "Ka",
+			ano: 2010,
+			getDetalhes: function () {
+				return this.marca + ' - ' + this.modelo;
+			}
+		}
+		console.log(carro.modelo);
+		console.log(carro.getDetalhes());
+
+		// *************************
+		// Funções
+		// *************************
+
+		function square(numero) {
+			return numero * numero;
+		}
+		console.log("O quadrado de 3 é " + square(3));
+
+		function addSquares(a,b) {
+			function square(x) {
+				return x * x;
+			}
+			return square(a) + square(b);
+		}
+		console.log(addSquares(2,3));
+
+		// *************************
+		// Eventos
+		// Todos os eventos: https://www.w3schools.com/tags/ref_eventattributes.asp
+		// *************************
+
+		var ele = document.getElementById("mouseover");
+		ele.addEventListener("mouseover", function( event ) {
+			ele.style.backgroundColor = "blue";
+		}, false);
+		ele.addEventListener("mouseout", function( event ) {
+			ele.style.backgroundColor = "red";
+		}, false);
+
+		console.log(document)
+
+	</script>
+</body>
+</html>
